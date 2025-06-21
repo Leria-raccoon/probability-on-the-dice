@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         container.addEventListener('drop', function(e) {
             e.preventDefault();
             this.style.borderColor = '#aaa';
-            this.style.backgroundColor = '##fafdb4';
+            this.style.backgroundColor = '#fafdb4';
             console.log(container.id);
             // drop - БРОСАЕМ В КОНТЕЙНЕР
 
@@ -105,6 +105,44 @@ vera.addEventListener('click', () => {
         const elementIds = Object.values(containerContents).map(item => item.id);
         console.log("Все ID элементов:", elementIds);
     }
+
+function calculateProbability(elementIds) {
+    const dice = elementIds.split(',').map(Number);  // Разбиваем строку на числа
+    const counts = {};                               // Считаем частоту каждого числа
+    dice.forEach(num => {
+        counts[num] = (counts[num] || 0) + 1;
+    });
+
+    // Вычисляем количество уникальных перестановок
+    let numerator = factorial(5);                    // 5! (для 5 кубиков)
+    let denominator = 1;
+    for (const num in counts) {
+        denominator *= factorial(counts[num]);       // Делим на факториалы повторений
+    }
+
+    const permutations = numerator / denominator;
+    const probability = permutations / Math.pow(6, 5);  // Делим на 6^5
+
+    return probability;
+}
+
+// Функция для вычисления факториала
+function factorial(n) {
+    if (n === 0 || n === 1) return 1;
+    let result = 1;
+    for (let i = 2; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+// Вычисляем вероятности для всех комбинаций
+elements.forEach(combo => {
+    const prob = calculateProbability(combo);
+    console.log(`Комбинация ${combo}: вероятность = ${prob.toFixed(6)} (${(prob * 100).toFixed(4)}%)`);
+});
+
+
 });
     // Кнопка сброса
     const del = document.getElementById('del');
@@ -117,9 +155,30 @@ vera.addEventListener('click', () => {
         });
     });
 
+ const raba = document.getElementById('raba')
+ const book = document.getElementById('book')
+ const waw = document.getElementById('waw')
+ const xistory = document.getElementById('xistory')
+
+
+ const dalsh = document.getElementById('dalsh')
+ dalsh.addEventListener('click', () => {
+ raba.style.display = "none"
+ book.style.display = 'block'
+ dalsh2.style.display = 'block'
+ dalsh.style.display = 'none'
+ waw.style.display = 'block'
+ })
+
+ const dalsh2 = document.getElementById('dalsh2')
+ dalsh2.addEventListener('click', () => {
+  book.style.display = 'none'
+  waw.style.display = 'none'
+  xistory.style.display = 'none'
+  dalsh2.style.display = 'none'
+ })
 
 
 
 
-    
 });

@@ -94,3 +94,63 @@ body {
 #del:hover {
     background-color: #f65151;
 }
+
+#xistory {
+    
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fafdb4;
+}
+
+#raba {
+  display: block;
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+}
+
+#dalsh {
+    display: flex;
+    position: absolute;
+    padding: 20px;
+    font-size: 25px;
+    left: 8%;
+    top: 85%;
+    background-color: #b0c3dd;
+}
+
+#dalsh:hover {
+    background-color: #7eb0f0;
+}
+
+#dalsh2 {
+    display: none;
+    position: absolute;
+    padding: 20px;
+    font-size: 25px;
+    right: 8%;
+    top: 85%;
+    background-color: #b0c3dd;
+}
+
+#dalsh2:hover {
+    background-color: #7eb0f0;
+}
+
+#book {
+  display: none;
+  position: absolute;
+  left: 10px;
+  bottom: 0px;
+}
+
+#waw {
+    position: absolute;
+    display: none;
+    right: 5%;
+    top: 10%;
+}
