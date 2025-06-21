@@ -7,7 +7,7 @@ body {
 #elements {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; /* ширина колонок */
-    grid-template-rows: 200px; /* высота */
+    grid-template-rows: 200px 10px; /* высота */
     flex-wrap: wrap;
     gap: 10px;
     max-width: 1100px;
@@ -39,7 +39,7 @@ body {
     border:  2px dashed #aaa;
     margin: 10px 0;
     padding: 15px;
-    background: rgb(250, 253, 180);
+    background: #fafdb4;
     transition: border-color 0.3s;
 }
 #cont{
@@ -48,4 +48,49 @@ body {
     grid-template-rows: 230px;
     gap: 25px;
     justify-content: center;
+}
+
+#Vera {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  gap: 10px;
+}
+
+#vera {
+    background-color: #b0c3dd;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#vera:hover {
+ background-color: #7eb0f0; 
+}
+
+#V {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#v {
+    display: flex;
+    justify-content: center;
+}
+
+#result{
+    background-color: rgb(175, 160, 177);
+    width: 100px;
+    height: 100px;
+}
+
+#del {
+   border-radius: 15px;
+   font-size: 20px;
+   background-color: #ed9999;
+}
+
+#del:hover {
+    background-color: #f65151;
 }
