@@ -1,0 +1,51 @@
+body {
+    background-color: rgb(250, 241, 157);
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+#elements {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; /* ширина колонок */
+    grid-template-rows: 200px; /* высота */
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 1100px;
+}
+
+.element {
+    padding: 10px;
+    cursor: move;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    display: flex;
+
+}
+
+.element img {
+    width: 145px;
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
+
+.dragging {
+    opacity: 0.5;
+    transform: scale(1.05);
+}
+
+.container {
+    border:  2px dashed #aaa;
+    margin: 10px 0;
+    padding: 15px;
+    background: rgb(250, 253, 180);
+    transition: border-color 0.3s;
+}
+#cont{
+    display: grid;
+    grid-template-columns: minmax(10px, 200px) minmax(10px, 200px) minmax(10px, 200px) minmax(10px, 200px) minmax(10px, 200px) ;
+    grid-template-rows: 230px;
+    gap: 25px;
+    justify-content: center;
+}
